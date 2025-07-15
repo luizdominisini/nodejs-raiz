@@ -1,5 +1,4 @@
 const Joi = require("joi");
-const joi = require("joi");
 
 const noticiaSchema = Joi.object({
     titulo: Joi.string().min(3).max(100).required(),
