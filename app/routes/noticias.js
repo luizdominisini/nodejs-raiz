@@ -10,4 +10,8 @@ module.exports = function (app) {
     app.post("/noticia/salvar", function (req, res) {
         app.app.controllers.ct_noticias.noticiaSalvar(app, req, res);
     });
+
+    app.get("/noticias/ultimas5", function (req, res) {
+        app.app.controllers.ct_noticias.noticiasUltimas5(app, req, res);
+    });
 };

@@ -52,3 +52,12 @@ module.exports.noticiaSalvar = function (app, req, res) {
         res.status(200).json({ message: "News saved successfully", result });
     });
 };
+
+module.exports.noticiasUltimas5 = function (app, req, res) {
+    const connection = app.config.db_connection();
+    const noticiasDAO = new app.app.models.noticias_dao(connection);
+
+    noticiasDAO.getNoticiasUltimas5(function (error, result) {
+        res.status(200).json({ result });
+    });
+};
